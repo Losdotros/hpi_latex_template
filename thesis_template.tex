@@ -1,7 +1,7 @@
 % This template was inspired by public templates from  Prof. Naumann's chair (https://hpi.de/naumann/teaching/master-theses.html) and Prof. Polze's chair (https://www.dcl.hpi.uni-potsdam.de/media/theses/)
 \documentclass[
         a4paper,     
-        titlepage,   
+%        titlepage,   
         twoside,     
         parskip,     % no indent after paragraph
         % per default headings are set in another font
@@ -54,6 +54,9 @@
 \usepackage{placeins} % \FloatBarrier
 \usepackage{soul} % \st - strikethough
 
+\usepackage{pdfpages} % includepdf for KOMA titlepage
+
+
 \renewcommand{\arraystretch}{1.5} % table row spacing
 
 \interfootnotelinepenalty=10000
@@ -74,24 +77,11 @@
 \renewcommand\theadgape{\Gape[4pt]}
 \renewcommand\cellgape{\Gape[4pt]}
 
-% ======== TITLE ========
-\newcommand{\hpitype}{Master's Thesis}
-\newcommand{\hpiauthor}{John Doe}
-\newcommand{\hpititle}{Some Long English Title}
-\newcommand{\hpisubtitle}{Shorter English Subtitle}
-\newcommand{\hpititleother}{Ein Deutscher Titel}
-\newcommand{\hpisubtitleother}{Ein Deutscher Untertitel}
-\newcommand{\hpisupervisor}{Supervisor 1\\Prof.\,Dr.\,Supervisor 2}
-\newcommand{\hpichair}{Some Chair}
-\newcommand{\hpiexternalsupervisor}{}
-\newcommand{\hpiexternal}{}
-\newcommand{\hpidate}{\today}
-
 \pagestyle{headings}
 
 \begin{document}
 
-\include{sections/title/titlepage}
+\includepdf{titlepage}
 \cleardoublepage
 
 % ======== DECLARATION ========

@@ -1,0 +1,67 @@
+\documentclass[
+a4paper,     % A4
+        a4paper,     % A4
+        titlepage,   % mit Titelseite
+        parskip,     % no indent after paragraph
+        % per default headings are set in another font
+        % see https://tex.stackexchange.com/questions/289853/why-does-koma-script-mix-serifs-and-sans-serifs/289867#289867
+        headings=standardclasses,
+        headings=big,
+        chapterprefix=false,
+        titlepage=firstiscover
+]{scrreprt}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman,english]{babel}
+
+\usepackage[paper=a4paper,right=1in,left=1in,bottom=1.5in]{geometry}% http://ctan.org/pkg/geometry
+
+
+
+% ======== TITLE ========
+\newcommand{\hpitype}{Master's Thesis}
+\newcommand{\hpiauthor}{John Doe}
+\newcommand{\hpititle}{Some Long English Title}
+\newcommand{\hpisubtitle}{Shorter English Subtitle}
+\newcommand{\hpititleother}{Ein Deutscher Titel}
+\newcommand{\hpisubtitleother}{Ein Deutscher Untertitel}
+\newcommand{\hpisupervisor}{Supervisor 1\\Prof.\,Dr.\,Supervisor 2}
+\newcommand{\hpichair}{Some Chair}
+\newcommand{\hpiexternalsupervisor}{}
+\newcommand{\hpiexternal}{}
+\newcommand{\hpidate}{\today}
+
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\raisebox{-0.5\height}{\includegraphics[height=3cm]{img/logo/hpi}}
+	\hspace*{.2\textwidth}
+	\raisebox{-0.5\height}{\includegraphics[height=3cm]{img/logo/up}}
+
+	\vspace*{4\baselineskip}
+	{\usekomafont{subject}\hpitype}\par
+
+	\vfill
+	{\huge\textbf{\hpititle}}\par
+	{\large\textbf{\hpisubtitle}}\par
+
+	\vspace*{\baselineskip}
+
+	\vfill
+	{\LARGE\hpititleother}\par
+	{\normalsize\hpisubtitleother}\par
+
+	\vfill
+	{\textbf{by}\\
+		\smallskip\usekomafont{author}\hpiauthor}\par
+	\vfill
+	{\textbf{Supervisors}\\
+		\usekomafont{publishers}\smallskip\hpisupervisor\\ \textit{\hpichair}\\ \smallskip\textbf{\normalfont\hpiexternalsupervisor}\\ \textit{\hpiexternal}}
+	\vfill
+	{\usekomafont{date}Hasso Plattner Institute\\University of Potsdam}\\
+	\vspace*{\baselineskip}
+	{\usekomafont{date}\hpidate}
+\end{titlepage}
+\end{document}
